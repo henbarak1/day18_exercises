@@ -205,3 +205,65 @@ function toCamelCase(str)
     }
     return ret;
 }
+//Ex5.4
+function toWeirdCase(str)
+{
+    let ret="";
+    for(let i = 0 ; i < str.length; i++)
+    {
+        if(i%2==0)
+        {
+            ret+=str.charAt(i).toUpperCase();
+        }else{
+            ret+=str.charAt(i);
+        }
+    }
+    return ret;
+}
+
+function abbreviateTwoWords(str)
+{
+    const strSplit = str.split(" ");
+    const word1 = strSplit[0];
+    const word2 = strSplit[1]
+    return word1.charAt(0).toUpperCase() + "."+word2.charAt(0).toUpperCase()
+}
+//Ex5.6
+function maskify(str)
+{
+    let ret="";
+    for(let i = 0 ; i < str.length; i++)
+    {
+        if(i>str.length-4)
+        {
+            ret+='#'
+        }else{
+            ret+=str.charAt(i);
+        }
+    }
+    return ret;
+}
+//Ex5.7
+function shortestWord(scentence)
+{
+    
+    const strSplit = str.split(" ");
+    let min = strSplit[0].length;
+    for (word of strSplit)
+    {
+        min = Math.min(min,word.length);
+    }
+    return min;
+}
+//Ex5.8
+function longestWord(scentence)
+{
+    
+    const strSplit = str.split(" ");
+    let max = strSplit[0].length;
+    for (word of strSplit)
+    {
+        max = Math.max(max,word.length);
+    }
+    return max;
+}
