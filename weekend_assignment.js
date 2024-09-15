@@ -43,4 +43,35 @@ function convertArrayToBinaryNumber(arr)
     return ret;
 }
 
-console.log(convertArrayToBinaryNumber([1,0,1,0]));
+//ex2.3
+function nextPerfectSquare(number)
+{
+    if(Math.floor(Math.sqrt(number))===Math.sqrt(number))
+    {
+        return Math.sqrt(number)+1;
+    }
+    else
+    {
+        return -1;
+    }
+}
+//ex2.4
+function findUniqueNum(arr)
+{
+    arr.sort(function(a,b) {return a - b});
+    if(arr[length-1]===arr[length-2])
+    {
+        return arr[0]
+    }
+    else
+    {
+        return arr[length-1];
+    }
+}
+//ex2.5
+function summation(number)
+{
+    return (number+1)*number/2;
+}
+
+console.log(summation(8));
