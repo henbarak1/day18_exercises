@@ -291,4 +291,29 @@ function accum(str)
     }
     return ret;
 }
-console.log(accum("abcd"));
+//Ex6.2
+function duplicates(str)
+{
+    const charArr = str.toLowerCase().split("");
+    charArr.sort();
+    let curr = '';
+    let count = 1;
+    let ret=""
+    for(let ch = 0 ; ch < charArr.length; ch++)
+    {
+        if(charArr[ch] != curr)
+        {
+            curr = charArr[ch];
+            while(charArr[ch+1]===curr)
+            {
+                count++;
+                ch++;
+            }
+        }
+        ret+=charArr[ch] +" "+count+" ";
+        count = 0;
+    }
+    return ret;
+}
+
+console.log(duplicates("aaabbbaa"));
