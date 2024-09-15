@@ -115,4 +115,93 @@ function nb_year(p0,percent,aug,p)
     }
     return yearsPassed;
 }
-console.log(nb_year(1500,5,100,5000));
+
+//ex3.2
+function NumPeopleOnTheBus(transitions)
+{
+    let numOfPeople = 0
+    for(stop in transitions)
+    {
+        numOfPeople+=stop[0]-stop[1];
+        if(numOfPeople<0)
+        {
+            return "invalid"
+        }
+    }
+    return numOfPeople;
+}
+
+//Ex4.1
+function fibo(index)
+{
+    if(index == 0)
+    { 
+        return 0;
+
+    }
+    if(index ===1 ||index ===2)
+    {
+        return 1;
+
+    }
+    return fibo(n-1)+fibo(n-2);
+}
+
+//Ex4.2
+function Tribonnaci(index)
+{
+    if(index == 0)
+        { 
+            return 0;
+        }
+        if(index ===1 ||index ===2)
+        {
+            return 1;
+        }
+        if(index === 3 )
+        {
+            return 2;
+        }
+        return fibo(n-1)+ fibo(n-2) +fibo(n-3);
+}
+
+//Ex5.1
+function trimStr(str)
+{
+    return str.substring(1,str.length()-1);
+}
+//Ex5.2
+function strRepeat(str,times)
+{
+    let ret =str;
+    for(let i=0; i < times; i++)
+    {
+        ret+=str;
+    }
+    return ret;
+}
+//ex5.3
+function toCamelCase(str)
+{
+    let ret=""
+   
+    for(let i = 0 ; i < str.length; i++)
+    {
+
+        if(str.charAt(i)=='-')
+        {
+            ret+=str.charAt(i+1).toUpperCase();
+            i++;
+        }
+        else if(str.charAt(i)=='_')
+        {
+            ret+=str.charAt(i+1)
+            i++;
+        }
+        else
+        {
+            ret+=str.charAt(i);
+        }
+    }
+    return ret;
+}
