@@ -30,4 +30,17 @@ function sumOfTwoLowestNumbers(arr)
     }
 }
 
-console.log(sumOfTwoLowestNumbers([1,2,3,4]));
+//ex2.2
+function convertArrayToBinaryNumber(arr)
+{
+    let ret = 0;
+    let powOfTwo = 1;
+    for (let i =0; i< arr.length; i++)
+    {
+        ret += powOfTwo*arr[arr.length-i-1];
+        powOfTwo*=2;
+    }
+    return ret;
+}
+
+console.log(convertArrayToBinaryNumber([1,0,1,0]));
