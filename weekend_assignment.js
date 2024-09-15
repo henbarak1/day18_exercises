@@ -74,4 +74,45 @@ function summation(number)
     return (number+1)*number/2;
 }
 
-console.log(summation(8));
+//ex2.6
+function centuryFromYear(year)
+{
+    return parseInt(1+(year-1)/100);
+}
+
+//Ex2.7
+function basicMath(op,val1,val2)
+{
+    if(op=='+')
+    {
+        return val1+val2;
+    }
+    else if(op=='-'){
+        return val1-val2;
+
+    }
+    else if(op=='*'){
+        return val1*val2;
+
+    }
+    else if(op=='/'){
+        return val1/val2;
+
+    }
+    else{
+        return "no such operation";
+    }
+}
+//Ex3.1
+function nb_year(p0,percent,aug,p)
+{
+    let tempPopu = p0;
+    let yearsPassed = 0;
+    while(tempPopu < p )
+    {
+        tempPopu = tempPopu+tempPopu*percent/100 + aug;
+        yearsPassed ++;
+    }
+    return yearsPassed;
+}
+console.log(nb_year(1500,5,100,5000));
