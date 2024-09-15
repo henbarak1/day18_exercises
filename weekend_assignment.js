@@ -267,3 +267,28 @@ function longestWord(scentence)
     }
     return max;
 }
+
+//Ex6.1
+function accum(str)
+{
+    let ret="";
+    for(let i = 0 ; i < str.length; i++)
+    {
+            if(str.charAt(i).toUpperCase()!=str.charAt(i))//is lower case
+            {
+                ret+="-"+ (str.charAt(i)).toUpperCase();
+                console.log();
+                for(let j = 0;j<=i;j++)
+                {
+                    ret+=str.charAt(i);
+                } 
+            }else//upper case
+            {
+                ret+= str.charAt(i);
+            }
+           
+       
+    }
+    return ret;
+}
+console.log(accum("abcd"));
