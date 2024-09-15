@@ -316,4 +316,72 @@ function duplicates(str)
     return ret;
 }
 
-console.log(duplicates("aaabbbaa"));
+//EX6.3
+function distinctLetters(str1,str2)
+{
+    let ret = ""
+    let notCommon = true;
+    for(let ch1 = 0 ; ch1 < str1.length; ch1++)
+    {
+        for(let ch2 = 0 ; ch2 < str2.length; ch2++)
+        {
+            if(str1.charAt(ch1)===str2.charAt(ch2))
+            {
+                notCommon = false;
+            }
+            if(notCommon){
+                ret+=ch1;
+            }
+        } 
+    }
+    let retArr = ret.split("");
+    retArr.sort()
+    ret=retArr.join();
+
+}
+//ex6.4
+function isogram(str)
+{
+    let set1 = new Set();
+    for(ch of str)
+    {
+        set1.add(ch);
+    }
+    return(set1.size ==str.length);
+}
+
+//ex7.1
+function filterMy(arr,func1)
+{
+    let ret = []
+    for (let i = 0 ; i < arr.length;i++)
+    {
+        if (func1(ret[i]))
+        {
+            ret.push(ret[i]);
+        }
+    }
+}
+//ex7.2
+function forEachMy(arr)
+{
+    for (element of arr)
+        {
+            //do whatever you want
+        }
+}
+//ex7.3
+
+function MapMy(arr,func1)
+{
+    let ret = []
+    for (let i = 0 ; i < arr.length;i++)
+    {
+        ret[i] =  (func1(ret[i]));
+    }
+}
+//ex8
+function rectPerimeter(width,height)
+{
+    return(2*(width+height));
+}
